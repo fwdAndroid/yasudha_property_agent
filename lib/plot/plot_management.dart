@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yasudha_property_agent/plot/edit_plot_mangement.dart';
+import 'package:yasudha_property_agent/plot/plotinfo.dart';
 
 class PlotManagement extends StatefulWidget {
   const PlotManagement({super.key});
@@ -141,65 +142,72 @@ class _PlotManagementState extends State<PlotManagement> {
                     crossAxisSpacing: 2.0,
                     mainAxisSpacing: 2.0),
                 itemBuilder: (BuildContext context, int index) {
-                  return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Stack(
-                          children: [
-                            Image.asset(
-                              "assets/logo.png",
-                              height: 150,
-                              fit: BoxFit.cover,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Container(
-                                  width: 40,
-                                  height: 40,
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: Color(0xfff8BC83F)),
-                                  child: Center(
-                                    child: IconButton(
-                                      onPressed: () {},
-                                      icon: Icon(
-                                        Icons.edit,
-                                        color: Colors.white,
+                  return InkWell(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (builder) => PlotInfo()));
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Stack(
+                            children: [
+                              Image.asset(
+                                "assets/logo.png",
+                                height: 150,
+                                fit: BoxFit.cover,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    width: 40,
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: Color(0xfff8BC83F)),
+                                    child: Center(
+                                      child: IconButton(
+                                        onPressed: () {},
+                                        icon: Icon(
+                                          Icons.edit,
+                                          color: Colors.white,
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                                Container(
-                                  width: 40,
-                                  height: 40,
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: Colors.grey.withOpacity(.1)),
-                                  child: Center(
-                                    child: IconButton(
-                                      onPressed: () {},
-                                      icon: Icon(
-                                        Icons.favorite_outline,
-                                        color: Color(0xff234F68),
+                                  Container(
+                                    width: 40,
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: Colors.grey.withOpacity(.1)),
+                                    child: Center(
+                                      child: IconButton(
+                                        onPressed: () {},
+                                        icon: Icon(
+                                          Icons.favorite_outline,
+                                          color: Color(0xff234F68),
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                )
-                              ],
-                            )
-                          ],
-                        ),
-                        Text(
-                          "Fairview Apartment",
-                          style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xff252B5C)),
-                        )
-                      ],
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
+                          Text(
+                            "Fairview Apartment",
+                            style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xff252B5C)),
+                          )
+                        ],
+                      ),
                     ),
                   );
                 },
